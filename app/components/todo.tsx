@@ -20,7 +20,7 @@ const Todo = (props: {
             <td>
               <InputTitle completed={props.completed} title={props.title} />
             </td>
-            <td>{!props.id !== undefined && <DeleteButton id={props.id} />}</td>
+            <td>{props.id !== undefined && <DeleteButton id={props.id} />}</td>
           </tr>
         </tbody>
       </table>
