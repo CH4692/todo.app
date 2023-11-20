@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 export const getTodos = async () => {
   const todos = await prisma.todos.findMany({
     orderBy: {
-      id: "desc",
+      createdAt: "desc",
     },
   });
   revalidatePath("/");
