@@ -1,7 +1,6 @@
 import Navbar from "./components/navbar";
 import Modal from "./components/modal";
 import { getTodos } from "./lib/todos";
-import TodoList from "./components/todoList";
 
 export type TodoType = {
   id: string | undefined;
