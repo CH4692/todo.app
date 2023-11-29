@@ -2,6 +2,7 @@
 
 import prisma from "../db";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { cache } from "react";
 
 export const getTodos = cache(async () => {
@@ -23,6 +24,7 @@ export const createTodo = cache(async (title: string | undefined) => {
   });
   console.log("Created Todo");
   revalidatePath("/");
+  redirect("/");
 });
 
 export const deleteTodo = cache(async (id: string | undefined) => {
@@ -33,6 +35,7 @@ export const deleteTodo = cache(async (id: string | undefined) => {
   });
   console.log("Deleted Todo");
   revalidatePath("/");
+  redirect("/");
 });
 
 export const setTodoChecked = cache(
@@ -48,6 +51,6 @@ export const setTodoChecked = cache(
 
     console.log("Updated Data:");
     revalidatePath("/");
-    return updatedTodo;
+    redirect("/");
   }
 );
